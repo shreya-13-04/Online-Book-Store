@@ -1,0 +1,38 @@
+
+<html >
+<head>
+    
+    <title>Reviews</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+        }
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+        .back-link {
+            margin-top: 20px;
+        }
+        body{
+            background-color: rgb(181, 176, 102);
+        }
+    </style>
+</head>
+<center><body>
+    <h1>Review Your Experience</h1>
+    <form  method="post">
+        <label>
+            Rate your experience (1 to 5):
+            <input type="number" name="rating" min="1" max="5" required>
+        </label>
+        <button type="submit">Submit Review</button>
+    </form>
+    <div class="back-link">
+        <a href="home.html">Back to Home Page</a>
+    </div>
+</body></center>
+</html>

@@ -1,0 +1,91 @@
+
+<html>
+<head>
+   
+    <title>Order Books</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+        }
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+        body{
+            background-color: rgb(181, 176, 102);
+        }
+        .back-link {
+            margin-top: 20px;
+        }
+    </style>
+</head><center>
+<body>
+    <h1>Order Books</h1>
+    <form  method="post" name="myform">
+        <label>
+            Name:
+            <input type="text" name="name"  placeholder="Enter your name" maxlength="20" minlength="3" required>
+        </label>
+        <label>
+            Address:
+            <textarea name="address" placeholder="Enter the Address "  required></textarea>
+        </label>
+        <label>
+            Mobile:
+            <input type="tel" name="mobile" placeholder="Enter phone number "  pattern="[6-9]{1}[0-9]{9}" required>
+        </label>
+        <label>
+            E-mail:
+            <input type="email" id="email" placeholder="Enter the email" >
+            <div id="error1" style="color: red;"></div>
+
+        </label>
+        <label>
+            Select Books:
+            <select name="books" multiple required>
+                <option value="book1">Book 1</option>
+                <option value="book2">Book 2</option>
+                <option value="book3">Book 3</option>
+                <option value="book3">Book 4</option>
+                <option value="book3">Book 5</option>
+                <option value="book3">Book 6</option>
+                <option value="book3">Book 7</option>
+                <option value="book3">Book 8</option>
+                <option value="book3">Book 9</option>
+                <option value="book3">Book 10</option>
+            </select>
+        </label>
+        <button type="submit" onclick="check()">ORDER</button>
+    </form>
+    
+         <script>
+            function check() {
+                var email = document.getElementById("email").value;
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                var error1 = document.getElementById("error1");
+
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                    error1.textContent = "Enter a valid email address";
+                    alert("Enter a valid email address");
+                    return false;
+                }
+                else{
+                    error1.textContent=" ";
+                    alert("Successful submission of form");
+                    document.getElementById("form").reset();
+                    return true;
+                }
+            }
+                
+            
+       
+    </script>
+    <div class="back-link">
+        <a href="home.html">Back to Home Page</a>
+    </div>
+</body></center>
+</html>
